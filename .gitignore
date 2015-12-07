@@ -3,4 +3,5 @@
 .eslintrc.json
 node_modules
 *.sublime*
+build/
 
