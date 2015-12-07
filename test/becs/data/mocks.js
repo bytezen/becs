@@ -9,9 +9,9 @@ var becs_path = '../../../src/',
 // components
 //---
 
-var StringComponentPrototype = ComponentFactory().withName('stringcomponent').props({value:'foo'}),
-	NumberComponentPrototype = ComponentFactory().withName('numbercomponent').props({value: 1}),
-	ObjectComponentPrototype = ComponentFactory().withName('objectcomponent').props({bar: {foo: 'what', bar: 200}})
+var StringComponentPrototype = ComponentFactory('stringcomponent',{value:'foo'}),
+	NumberComponentPrototype = ComponentFactory('numbercomponent',{value: 1}),
+	ObjectComponentPrototype = ComponentFactory('objectcomponent',{bar: {foo: 'what', bar: 200}})
 
 var stringComp = StringComponentPrototype.create(), 
 	stringComp1 = StringComponentPrototype.create({value:'bar'}),
