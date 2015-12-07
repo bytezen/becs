@@ -2,16 +2,17 @@
   "name": "becs",
   "version": "1.0.0",
   "description": "Entity component system implementation based on the Ash Framework by Richard Lord and the javascript port of Ash, Ash-js.",
-  "main": "framework.js",
-  "directories": {
-    "test": "test"
+  "main": "src/index.js",
+  "directories": {    
+    "lib" : "lib"
   },
   "scripts": {
     "test:all": "mocha test/becs/",
     "test": "mocha",
     "lint:all": "eslint src/",
     "lint": "eslint",
-    "browserify" : "browserify browserify.js > build/browserify_learn_bundle.js"
+    "browserify" : "browserify browserify.js > build/browserify_learn_bundle.js",
+    "package": "npm pack && mv becs-1.0.0.tgz build/"
   },
   "repository": {
     "type": "git",
