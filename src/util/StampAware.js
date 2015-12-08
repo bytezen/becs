@@ -1,5 +1,6 @@
 var stampit = require('stampit'),
-	L = require('lemonad')
+	L = require('lemonad'),
+	uuid = require('uuid')
 
 
 
@@ -34,11 +35,19 @@ module.exports =  stampit().refs({
 							})
 							.init(function initType(params) { 
 								this.stamp = params.stamp
-							})
-	
+								//mirror the stampid for the stamper and created instances
+								if(!L.existy(params.stamp.stampid)) {
+									params.stamp.stampid = uuid.v4()
+								}
+								this.stampid = params.stamp.stampid
+							})	
 
 
-// var CompPrototype = module.exports
+
+var CompPrototype = module.exports
+// var comp1 = CompPrototype()
+// console.log(CompPrototype.stampid)
+// console.log(comp1.stampid)
 // var CompPrototype2 = module.exports
 // var comp1 = CompPrototype({bar: 100, value: 'bar'})
 // var comp2 = CompPrototype()
